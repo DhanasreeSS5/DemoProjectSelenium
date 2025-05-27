@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="paralleltesting_methods" parallel="methods" thread-count="5"><!-- at a time 5 test cases can be run-->
+	<test thread-count="5" name="Test">
+	 <parameter name="browser" value="edge"></parameter>
+		<classes>
+			<class name="testscript.LoginTest"><!-- test cases in login run parallelly-->
+			<methods>
+			<include name="loginTest"></include>
+			<include name="correctuidIncorrectpwd"></include>
+			</methods>
+			
+			</class>
+			</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->
+<!-- in cross browser after run first browser then run the  second,in paralleltesting,
+at a time run in two browsers here main portion is parallel=test 
+cross browser one run after the completion of fist run-->
+<!-- In multibrowser testing both are run simultaneously
+multipleclassess parallely execute in a browsers
+multiple test class can be run parallely
+1class methods,parallel="methods" -->
